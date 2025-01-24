@@ -8,7 +8,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3001/login",{email,password})
+    axios.post("http://mernstack-login-page-api.vercel.app/login",{email,password})
     .then(result=> {
       console.log(result.data)
       if(result.data=="succusful"){

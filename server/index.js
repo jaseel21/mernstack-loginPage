@@ -11,7 +11,7 @@ const app=express()
 app.use(express.json())
 app.use(cors(
     {
-        origin: ["https://mernstack-login-page.vercel.app"],
+        origin: ["https://mernstack-login-page-frontend.vercel.app"],
         methods: ["POST", "GET"],
         credentials: true
     }

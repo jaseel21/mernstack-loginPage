@@ -1,7 +1,9 @@
 import React from 'react';
-import SignUp from './SignUp.jsx';
-import Login from './Login.jsx';
+import { lazy } from 'react';
 import {BrowserRouter ,Routes ,Route} from "react-router-dom"
+
+const SignUp = lazy(()=>import('./SignUp'))
+const Login =lazy(()=>import("./Login"))
 
 function App() {
 
