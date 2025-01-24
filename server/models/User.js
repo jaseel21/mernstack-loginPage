@@ -9,4 +9,5 @@ const UserSchema =new mongoose.Schema({
 
 const UserModel= mongoose.model('datas',UserSchema)
 
+
 module.exports=UserModel
