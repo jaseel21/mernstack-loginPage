@@ -11,6 +11,7 @@ const SignUp = () => {
 
  const navigate=useNavigate()
 
+ axios.defaults.withCredentials=true
   
   const handleSubmit=  (e)=>{
     e.preventDefault();
