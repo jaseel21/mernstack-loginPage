@@ -12,22 +12,17 @@ const SignUp = () => {
  const navigate=useNavigate()
 
   
-  const handleSubmit=(e)=>{
+  const handleSubmit=  (e)=>{
     e.preventDefault();
-    axios.post("http://mernstack-login-page-api.vercel.app/signup",{name,email,password})
-    .then(result=> {
+     axios.post('http://localhost:3001/signup', {name,email,password}
+
+     ).then(result=> {
       console.log(result) 
     navigate("/login")
     }
-  )
-    .catch(err=> console.log(err))
+  ) .catch(err=> console.log( err))
 
   }
-
-  const handleChange = (e) => {
-   
-  };
-
 
   return (
     <div className="signup-container">

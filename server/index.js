@@ -2,7 +2,7 @@ const express =require('express')
 const mongoose=require('mongoose')
 const cors =require("cors")
 require("dotenv").config();
-const signupRoute=require('./routes/user')
+// const signupRoute=require('./routes/user')
 
 const UserModel = require('./models/User')
 
@@ -10,14 +10,14 @@ const UserModel = require('./models/User')
 const app=express()
 app.use(express.json())
 app.use(cors(
-    {
-        origin: ["https://mernstack-login-page-frontend.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
+    // {
+    //     origin: ["http://localhost:3001"],
+    //     methods: ["POST", "GET"],
+    //     credentials: true
+    // }
 ));
 
-app.use('/signup',signupRoute)
+// app.use('/signup',signupRoute)
 
 mongoose
   .connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -27,6 +27,15 @@ mongoose
  app.get('/',(req,res)=>{
     res.json("hello")
  } )
+
+ app.post('/signup', (req, res) => {
+    console.log(req.body);
+    UserModel.create(req.body)
+        .then(user =>{ 
+           
+            res.json(user)})
+        .catch(err => res.status(500).json(err));
+});
 
 app.post('/login',(req,res)=>{
     const {email,password}=req.body
