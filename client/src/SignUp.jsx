@@ -15,7 +15,7 @@ const SignUp = () => {
   
   const handleSubmit=  (e)=>{
     e.preventDefault();
-     axios.post('http://mernstack-login-page-api.vercel.app/signup', {name,email,password}
+     axios.post('https://mernstack-login-page-api.vercel.app/signup', {name,email,password}
 
      ).then(result=> {
       console.log(result) 
